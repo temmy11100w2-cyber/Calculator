@@ -12,6 +12,11 @@
             }
         }
 
+        function clearExpression() {
+            document.getElementById("expression").value = "";
+            document.getElementById("result").value = "";
+        }
+
 
         function calculate() {
             let expr = document.getElementById("expression").value;
