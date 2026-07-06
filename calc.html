@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1a1a1a;
+        }
+
+        .container {
+            width: 300px;
+            height: 500px;
+            background-color: black;
+            border-radius: 5%;
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            gap: 8px;
+        }
+
+        .expression {
+            width: 100%;
+            height: 80px;
+            border-radius: 10px;
+            border: 2px solid orange;
+            background-color: rgb(12, 12, 12);
+            color: white ;
+            font-size: 20px;
+            text-align: right;
+            padding: 10px;
+            margin-bottom: 8px;
+        }
+
+        .row {
+            display: flex;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .row button {
+            flex: 1;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-percent {
+            background-color: #a6a6a6;
+            color: black;
+            font-size: 18px;
+        }
+
+        .btn-ce {
+            background-color: #a6a6a6;
+            color: black;
+            font-size: 18px;
+        }
+
+        .btn-c {
+            background-color: #a6a6a6;
+            color: black;
+            font-size: 18px;
+        }
+
+        .btn-del {
+            background-color: #a6a6a6;
+            color: black;
+            font-size: 18px;
+        }
+
+        .btn-reciprocal {
+            background-color: #a6a6a6;
+            color: black;
+            font-size: 16px;
+        }
+
+        .btn-square {
+            background-color: #a6a6a6;
+            color: black;
+            font-size: 16px;
+        }
+
+        .btn-sqrt {
+            background-color: #a6a6a6;
+            color: black;
+            font-size: 16px;
+        }
+
+        .btn-divide {
+            background-color: #ff9500;
+            color: white;
+            font-size: 24px;
+        }
+
+        .btn-multiply {
+            background-color: #ff9500;
+            color: white;
+            font-size: 24px;
+        }
+
+        .btn-subtract {
+            background-color: #ff9500;
+            color: white;
+            font-size: 24px;
+        }
+
+        .btn-add {
+            background-color: #ff9500;
+            color: white;
+            font-size: 24px;
+        }
+
+        .btn-equals {
+            background-color: #ff9500;
+            color: white;
+            font-size: 24px;
+        }
+
+        .btn-7 {
+            background-color: #505050;
+            color: white;
+            font-size: 24px;
+        }
+
+        .btn-8 {
+            background-color: #505050;
+            color: white;
+            font-size: 24px;
+        }
+
+        .btn-9 {
+            background-color: #505050;
+            color: white;
+            font-size: 24px;
+        }
+
+        .btn-4 {
+            background-color: #505050;
+            color: white;
+            font-size: 24px;
+        }
+
+        .btn-5 {
+            background-color: #505050;
+            color: white;
+            font-size: 24px;
+        }
+
+        .btn-6 {
+            background-color: #505050;
+            color: white;
+            font-size: 24px;
+        }
+
+        .btn-1 {
+            background-color: #505050;
+            color: white;
+            font-size: 24px;
+        }
+
+        .btn-2 {
+            background-color: #505050;
+            color: white;
+            font-size: 24px;
+        }
+
+        .btn-3 {
+            background-color: #505050;
+            color: white;
+            font-size: 24px;
+        }
+
+        .btn-0 {
+            background-color: #505050;
+            color: white;
+            font-size: 24px;
+        }
+
+        .btn-decimal {
+            background-color: #505050;
+            color: white;
+            font-size: 24px;
+        }
+
+        .btn-sign {
+            background-color: #505050;
+            color: white;
+            font-size: 20px;      
+        }
+
+        .sin{
+            background-color: #a6a6a6;
+            color: black;
+            font-size: 15px;  
+        }
+
+        .π{
+            background-color:#a6a6a6;
+            color: black;
+            font-size: 20px; 
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <input type="text" id="expression"  class="expression" readonly placeholder="0">
+    <div class="row">
+        <button onclick="sin()" class="sin">Sin</button>
+        <button onclick="cos()" class="sin">Cos</button>
+        <button onclick="tan()" class="sin">Tan</button>
+        <button onclick="PI()" class="π">π</button>
+    </div>
+    <div class="row">
+        <button onclick="appendToExpression(`%`)" class="btn-percent">%</button>
+        <button onclick="appendToExpression(`CE`)" class="btn-ce">CE</button>
+        <button onclick="appendToExpression(`C`)" class="btn-c">C</button>
+        <button onclick="appendToExpression(`Del`)" class="btn-del">Del</button>
+    </div>
+    <div class="row">
+        <button onclick="appendToExpression(`1/`)" class="btn-reciprocal">1/x</button>
+        <button onclick="raisetopower()" class="btn-square">x²</button>
+        <button onclick="squareroot()" class="btn-sqrt">√</button>
+        <button onclick="appendToExpression(`/`)" class="btn-divide">÷</button>
+    </div>
+    <div class="row">
+        <button onclick="appendToExpression(`7`)" class="btn-7">7</button>
+        <button onclick="appendToExpression(`8`)" class="btn-8">8</button>
+        <button onclick="appendToExpression(`9`)" class="btn-9">9</button>
+        <button onclick="appendToExpression(`*`)" class="btn-multiply">×</button>
+    </div>
+    <div class="row">
+        <button onclick="appendToExpression(`4`)" class="btn-4">4</button>
+        <button onclick="appendToExpression(`5`)" class="btn-5">5</button>
+        <button onclick="appendToExpression(`6`)" class="btn-6">6</button>
+        <button onclick="appendToExpression(`-`)" class="btn-subtract">−</button>
+    </div>
+    <div class="row">
+        <button onclick="appendToExpression(`1`)" class="btn-1">1</button>
+        <button onclick="appendToExpression(`2`)" class="btn-2">2</button>
+        <button onclick="appendToExpression(`3`)" class="btn-3">3</button>
+        <button onclick="appendToExpression(`+`)" class="btn-add">+</button>
+    </div>
+    <div class="row">
+        <button onclick="appendToExpression(`+/-`)" class="btn-sign">+/-</button>
+        <button onclick="appendToExpression(`0`)" class="btn-0">0</button>
+        <button onclick="appendToExpression(`.`)" class="btn-decimal">.</button>
+        <button onclick="calculate()" class="btn-equals"> = </button>
+    </div>
+
+
+</div>
+
+    <script src="calc.js"></script>
+</body>
+</html>
+
+
