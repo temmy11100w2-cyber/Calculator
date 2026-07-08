@@ -1,24 +1,23 @@
+    const appendToExpression = (arg) => {
+        let expression = document.getElementById("expression");
 
-        function appendToExpression(arg) {
-            let expression = document.getElementById("expression");
-
-            if (arg === `C`) {
-                expression.value = "";
-                document.getElementById("result").value = "";
-            } else if (arg === `Del`) {
-                expression.value = expression.value.slice(0, -1);
-            } else {
-                expression.value += arg;
-            }
+        if (arg === `C`) {
+            expression.value = "";
+            document.getElementById("result").value = "";
+        } else if (arg === `Del`) {
+            expression.value = expression.value.slice(0, -1);
+        } else {
+            expression.value += arg;
         }
+    };
 
-        function clearExpression() {
+        const clearExpression = () => {
             document.getElementById("expression").value = "";
             document.getElementById("result").value = "";
         }
 
 
-        function calculate() {
+        const calculate = () => {
             let expr = document.getElementById("expression").value;
             let result = eval(expr);
             document.getElementById("expression").value = result;
@@ -26,40 +25,40 @@
         }
 
 
-        function raisetopower() {
+        const raisetopower = () => {
             let expr = document.getElementById("expression").value;
             let result = Math.pow(expr, 2);
             document.getElementById("expression").value = result;
         }
 
-        function squareroot() {
+        const squareroot = () => {
             let expr = document.getElementById("expression").value;
             let result = Math.sqrt(expr);
             document.getElementById("expression").value = result;                      
         }
 
-        function sin() {
+        const sin = () => {
             let expr = document.getElementById("expression").value;
             let result = Math.sin(expr)
             document.getElementById("expression").value = result; 
 
         }
 
-        function tan() {
+        const tan = () => {
             let expr = document.getElementById("expression").value;
             let result = Math.tan(expr)
             document.getElementById("expression").value = result; 
 
         }
 
-        function cos() {
+        const cos = () => {
             let expr = document.getElementById("expression").value;
             let result = Math.cos(expr)
             document.getElementById("expression").value = result; 
 
         }
 
-        function PI() {
+        const PI = () => {
             let expr = document.getElementById("expression").value;
             let result = Math.PI;
             document.getElementById("expression").value = result; 
